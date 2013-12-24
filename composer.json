@@ -1,0 +1,22 @@
+{
+    "name": "rawebone/view-model",
+    "description": "This library provides an MVVM approach to view layers with am emphasis on testability and documentation",
+    "keywords": [ "mvvm" ],
+    "authors": [
+        {
+            "name": "Nick Rawe",
+            "email": "rawebone@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rawebone\\ViewModel\\": [ "library/" ]
+        }
+    }
+}
