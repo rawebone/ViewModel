@@ -12,7 +12,10 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "mustache/mustache": "v2.5.0",
+        "twig/twig": "v1.15.0",
+        "phly/mustache": "1.2.1"
     },
     "autoload": {
         "psr-0": {
