@@ -21,7 +21,7 @@ class PhlyMustacheEngine implements ViewEngineInterface
     
     public function render(ViewModelInterface $vm)
     {
-        $tmpl = ($this->asFile ? $vm->getTemplateFile() : $vm->getTemplateContents());
+        $tmpl = ($this->asFile ? $vm->getTemplateFile() . ".mustache" : $this->contents($vm));
         return $this->engine->render($tmpl, array("model" => $vm));
     }
     
@@ -31,5 +31,10 @@ class PhlyMustacheEngine implements ViewEngineInterface
     public function engine()
     {
         return $this->engine;
+    }
+    
+    protected function contents(ViewModelInterface $vm)
+    {
+        return file_get_contents($vm->getTemplateFile() . ".mustache");
     }
 }

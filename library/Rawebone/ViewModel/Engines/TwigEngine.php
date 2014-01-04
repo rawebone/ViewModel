@@ -6,7 +6,7 @@ use Rawebone\ViewModel\ViewEngineInterface;
 use Rawebone\ViewModel\ViewModelInterface;
 
 /**
- * Adapter to allow rendering View Models against Mustache.
+ * Adapter to allow rendering View Models against Twig.
  */
 class TwigEngine implements ViewEngineInterface
 {
@@ -21,7 +21,7 @@ class TwigEngine implements ViewEngineInterface
     
     public function render(ViewModelInterface $vm)
     {
-        $tmpl = ($this->asFile ? $vm->getTemplateFile() : $vm->getTemplateContents());
+        $tmpl = ($this->asFile ? $vm->getTemplateFile() . ".twig" : $this->contents($vm));
         return $this->engine->render($tmpl, array("model" => $vm));
     }
     
@@ -31,5 +31,10 @@ class TwigEngine implements ViewEngineInterface
     public function engine()
     {
         return $this->engine;
+    }
+        
+    protected function contents(ViewModelInterface $vm)
+    {
+        return file_get_contents($vm->getTemplateFile() . ".twig");
     }
 }

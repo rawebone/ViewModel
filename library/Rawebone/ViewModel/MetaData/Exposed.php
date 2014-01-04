@@ -19,8 +19,18 @@ class Exposed
     {
         $this->type = $type;
         $this->name = $name;
-        $this->return = $returnType;
+        $this->returns = $returnType;
         $this->example = $example;
+    }
+    
+    public function isMethod()
+    {
+        return $this->type === self::TYPE_METHOD;
+    }
+    
+    public function isProperty()
+    {
+        return $this->type === self::TYPE_PROPERTY;
     }
     
     public function type()

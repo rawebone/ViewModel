@@ -5,5 +5,4 @@ interface ViewModelInterface
 {
     function getTemplateName();
     function getTemplateFile();
-    function getTemplateContents();
 }

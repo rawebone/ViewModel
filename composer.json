@@ -13,6 +13,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
+        "mockery/mockery": "0.8.0",
         "mustache/mustache": "v2.5.0",
         "twig/twig": "v1.15.0",
         "phly/mustache": "1.2.1",

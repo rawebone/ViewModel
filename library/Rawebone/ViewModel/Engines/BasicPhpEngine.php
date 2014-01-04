@@ -13,7 +13,7 @@ class BasicPhpEngine implements ViewEngineInterface
 
     public function render(ViewModelInterface $vm)
     {
-        return $this->doRender($vm->getTemplateFile(), $vm);
+        return $this->doRender($vm->getTemplateFile() . ".php", $vm);
     }
     
     protected function doRender($file, $model)

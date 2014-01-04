@@ -5,9 +5,9 @@ namespace Rawebone\ViewModel\MetaData\Providers;
 use Rawebone\ViewModel\MetaData\MetaDataProviderInterface;
 use Rawebone\ViewModel\ViewModelInterface;
 use Rawebone\ViewModel\MetaData\Exposed;
-use zep\anno\Annotations;
+use zpt\anno\Annotations;
 
-class BasicMetaDataProvider implements MetaDataProviderInterface
+class ZeptechMetaDataProvider implements MetaDataProviderInterface
 {
     /**
      * @param \Rawebone\ViewModel\ViewModelInterface $vm
@@ -23,7 +23,7 @@ class BasicMetaDataProvider implements MetaDataProviderInterface
 
     protected function getExposedProperties(array &$graph, \ReflectionClass $rc) {
         foreach ($rc->getProperties(\ReflectionProperty::IS_PUBLIC) as $prop) {
-            if (($exposed = $this->getExposed(Exposed::TYPE_METHOD, $prop->getName(), new Annotations($prop)))) {
+            if (($exposed = $this->getExposed(Exposed::TYPE_PROPERTY, $prop->getName(), new Annotations($prop)))) {
                 $graph[] = $exposed;
             }
         }
@@ -31,7 +31,7 @@ class BasicMetaDataProvider implements MetaDataProviderInterface
 
     protected function getExposedMethods(array &$graph, \ReflectionClass $rc) {
         foreach ($rc->getMethods(\ReflectionMethod::IS_PUBLIC) as $meth) {
-            if (($exposed = $this->getExposed(Exposed::TYPE_PROPERTY, $meth->getName(), new Annotations($meth)))) {
+            if (($exposed = $this->getExposed(Exposed::TYPE_METHOD, $meth->getName(), new Annotations($meth)))) {
                 $graph[] = $exposed;
             }
         }
