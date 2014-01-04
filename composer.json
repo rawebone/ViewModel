@@ -15,7 +15,11 @@
         "phpunit/phpunit": "*",
         "mustache/mustache": "v2.5.0",
         "twig/twig": "v1.15.0",
-        "phly/mustache": "1.2.1"
+        "phly/mustache": "1.2.1",
+        "zeptech/annotations": "1.1.0"
+    },
+    "optional": {
+        "zeptech/annotations": "Required if using the MetaData section of the library"
     },
     "autoload": {
         "psr-0": {
