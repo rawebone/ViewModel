@@ -10,7 +10,7 @@ abstract class AbstractViewModel implements ViewModelInterface
 
     public function getTemplateFile()
     {
-        return __DIR__ . "/" . $this->getTemplateFile() . ".view.php";
+        return __DIR__ . "/" . $this->getTemplateName() . ".view.php";
     }
 
     public function getTemplateName()
