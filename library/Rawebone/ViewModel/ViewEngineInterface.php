@@ -9,4 +9,11 @@ interface ViewEngineInterface
      * @return string
      */
     function render(ViewModelInterface $vm);
+    
+    /**
+     * Returns the encapsulated rendering engine.
+     * 
+     * @return object
+     */
+    function engine();
 }
