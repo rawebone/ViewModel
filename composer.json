@@ -9,14 +9,14 @@
         }
     ],
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-0": {
-            "Rawebone\\ViewModel\\": [ "library/" ]
+            "Rawebone\\ViewModel\\": [ "library/", "tests/" ]
         }
     }
 }
